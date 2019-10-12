@@ -1,10 +1,7 @@
 import React from "react";
 import { Link } from 'react-router-dom';
 
-import WelcomePage from './WelcomePage';
-import CharacterList from './CharacterList';
-import LocationsList from './LocationsList';
-import EpisodeList from './EpisodeList';
+
 
 
 export default function Navigation() {

@@ -1,10 +1,17 @@
 import React from "react";
-import { Icon } from 'semantic-ui-react'
+import styled from 'styled-components'
+const DisplayCard = styled.div`
+height: 100%;
+display:flex;
+margin: 2% auto
+color:darkblue;
+`;
 
 export default function CharacterCard(props) {
   const { image, name, location, species, status, origin } = props.char
   
   return (
+    <DisplayCard>
     <div className="card">
       <img src={image} alt={name}/>
       <div className="card-text">
@@ -15,10 +22,9 @@ export default function CharacterCard(props) {
           <p>Origin: {origin.name}</p>
         </div>
       </div>
-      <div className="episode">
-        <Icon name='user' size='large' />
-        <h2>Episodes</h2>
-      </div>
+      
+      
     </div>
+    </DisplayCard>
   )
 }

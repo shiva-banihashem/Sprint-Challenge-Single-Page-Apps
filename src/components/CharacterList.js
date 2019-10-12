@@ -1,7 +1,17 @@
 import React, { useEffect, useState } from "react";
 import CharacterCard from './CharacterCard';
 import axios from 'axios';
+import styled from 'styled-components'
 
+const ListCards = styled.div`
+width: 98%;
+height: 100%;
+display:flex;
+flex-wrap:wrap;
+justify-content:space-around;
+margin: 2% 2%
+
+`;
 export default function CharacterList() {
   const [charList, setCharList] = useState();
   const [charSearch, setCharSearch] = useState('');
@@ -9,6 +19,7 @@ export default function CharacterList() {
   useEffect(() => {
     axios.get('https://rickandmortyapi.com/api/character/')
       .then(res =>{
+        console.log(res.data);
         setCharList(res.data.results)
       })
       .catch(err => console.log('Error: ', err));
@@ -19,7 +30,7 @@ export default function CharacterList() {
     return <p>Loading data...</p>
   }
 
-  const filterOnChange = (e) => {
+  const searchOnChange = (e) => {
     setCharSearch(e.target.value);
   }
 
@@ -32,11 +43,13 @@ export default function CharacterList() {
         type="text"
         placeholder="Search Character..."
         value={charSearch}
-        onChange={filterOnChange}
+        onChange={searchOnChange}
       />
-      <div className="character-list grid-view">
+      <ListCards>
+        
         {filteredList.map((char, index) => <CharacterCard char={char} key={index}/>)}
-      </div>
+        
+      </ListCards>
     </div>
   );
 }

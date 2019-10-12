@@ -1,5 +1,5 @@
 import React from "react";
-import Navigation from "./components/Nation.js";
+import Navigation from "./components/Navigation.js";
 import Header from "./components/Header.js";
 import { Route } from 'react-router-dom';
 import WelcomePage from './components/WelcomePage';
