@@ -34,7 +34,7 @@ export default function CharacterList() {
     setCharSearch(e.target.value);
   }
 
-  let filteredList = charList.filter(charName => charName.name.indexOf(charSearch) !== -1)
+  let filteredList = charList.filter(charName => charName.name.toLowerCase().indexOf(charSearch.toLowerCase()) !== -1)
 
   return (
     <div>

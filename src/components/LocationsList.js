@@ -29,8 +29,8 @@ export default function LocationsList() {
   const searchOnChange = (e) => {
     setLocationSearch(e.target.value);
   }
-  let filteredList = locationList.filter(location => location.name.indexOf(locationSearch) !== -1)
-
+  let filteredList = locationList.filter(location => location.name.toLowerCase().indexOf(locationSearch.toLowerCase()) !== -1)
+console.log(filteredList);
 
   return (
     <div>

@@ -12,7 +12,7 @@ margin: 2% auto
 
 `;
 export default function EpisodesList() {
-  const [episodeList, setEpisodeList] = useState();
+  const [episodeList, setEpisodeList] = useState([])
   const [episodeSearch, setEpisodeSearch] = useState('');
 
   useEffect(() => {
@@ -32,7 +32,7 @@ export default function EpisodesList() {
     setEpisodeSearch(e.target.value);
   }
 
-  let filteredList = episodeList.filter(episodeName => episodeName.name.indexOf(episodeSearch) !== -1)
+  let filteredList = episodeList.filter(episodeName => episodeName.name.toLowerCase().indexOf(episodeSearch.toLowerCase()) !== -1)
 
   return (
     <div>
