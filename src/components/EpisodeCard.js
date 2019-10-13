@@ -9,13 +9,14 @@ color:darkblue;
 border:1px solid blue;
 
 `;
-export default function LocationCard(props) {
-  const { name, type, dimension, residents } = props.location;
+export default function EpisodeCard(props) {
+  const { name, episode, air_date, characters } = props.episode;
   return (
     <DisplayCard>
       <h2>{name}</h2>
-      <h3>{type} - {dimension}</h3>
-      <h3>{residents.length} Residents</h3>
+      <h3>{episode}</h3>
+      <h3>Aired: {air_date}</h3>
+      <h3>{characters.length} Characters</h3>
     </DisplayCard>
   )
 }
